@@ -6,7 +6,7 @@
 /*   By: rkirszba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 12:36:50 by rkirszba          #+#    #+#             */
-/*   Updated: 2019/07/01 11:30:02 by rkirszba         ###   ########.fr       */
+/*   Updated: 2019/11/07 15:19:17 by rkirszba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ static int	ft_select(t_selecter *selecter)
 		tputs(tgoto((const char*)selecter->cmds.mv_curs, 0, 0), 1, &outc);
 		ret = 0;
 		write_args(selecter);
-		if ((ret = input_manager(selecter, cmd_tab) || !selecter->first_arg))
+		if ((ret = input_manager(selecter, cmd_tab)) || !selecter->first_arg)
 			break ;
 	}
 	tputs(selecter->cmds.clear, 1, &outc);
